@@ -22,12 +22,35 @@ public class Funcionario extends Pessoa{
 
     }
 
+    public static ArrayList<Funcionario> getListaFuncionarios() {
+        return listaFuncionarios;
+    }
+
+    public static void setListaFuncionarios(ArrayList<Funcionario> listaFuncionarios) {
+        Funcionario.listaFuncionarios = listaFuncionarios;
+    }
+
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
     public boolean checarFuncionario(int numero) {
         boolean verifica = false;
 
         for(int i = 0; i < Funcionario.listaFuncionarios.size(); i++){
-            if(Funcionario.listaFuncionarios.get(i).getNumero() == numero){
+            if(Funcionario.listaFuncionarios.get(i).getMatricula() == numero){
                 verifica = true;
             }
         }
