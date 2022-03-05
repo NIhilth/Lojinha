@@ -68,4 +68,29 @@ public class Endereco {
     public void setCep(int cep) {
         this.cep = cep;
     }
+
+    public Endereco(String pais, String estado, String cidade, String bairro, String rua, String complemento, int numero, int cep) {
+        this.pais = pais;
+        this.estado = estado;
+        this.cidade = cidade;
+        this.bairro = bairro;
+        this.rua = rua;
+        this.complemento = complemento;
+        this.numero = numero;
+        this.cep = cep;
+    }
+
+    @Override
+    public String toString() {
+        return "Endereco{" +
+                "pais='" + pais + '\'' +
+                ", estado='" + estado + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", rua='" + rua + '\'' +
+                ", complemento='" + complemento + '\'' +
+                ", numero=" + numero +
+                ", cep=" + cep +
+                '}';
+    }
 }

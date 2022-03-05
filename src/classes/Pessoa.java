@@ -57,6 +57,13 @@ public class Pessoa extends Endereco{
 
     }
 
-
-
+    public Pessoa(String pais, String estado, String cidade, String bairro, String rua, String complemento, int numero, int cep, String nome, String cpf, String email, String telefone, String genero, int idade) {
+        super(pais, estado, cidade, bairro, rua, complemento, numero, cep);
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.telefone = telefone;
+        this.genero = genero;
+        this.idade = idade;
+    }
 }
