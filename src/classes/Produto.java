@@ -86,4 +86,46 @@ public class Produto {
         this.codigo = codigo;
         this.quantidade = quantidade;
     }
+
+    @Override
+    public String toString() {
+        return "Produto: " + nome +
+                "\nModelo: " + modelo +
+                "\nDescricao: " + descricao +
+                "\nMarca: " + marca +
+                "\nValor: " + valor +
+                "\nCodigo: " + codigo +
+                "\nQuantidade no estoque: " + quantidade + "\n";
+    }
+
+    public String mostrarTodos() {
+        String texto = "";
+        for(int i = 0; i < listaProdutos.size(); i++){
+            texto += "\n" +listaProdutos.get(i).toString();
+        }
+
+        return texto;
+    }
+
+
+    public boolean verProduto(int numero) {
+        boolean checar = false;
+
+        for(int i = 0; i < listaProdutos.size(); i++){
+           if(listaProdutos.get(i).getCodigo() == numero){
+               checar = true;
+           }
+        }
+
+        return checar;
+    }
+
+    public void vender(int numero, int quantidade) {
+
+        for(int i = 0; i < listaProdutos.size(); i++){
+            if(listaProdutos.get(i).getCodigo() == numero){
+                listaProdutos.get(i).setQuantidade( listaProdutos.get(i).getQuantidade() - quantidade);
+            }
+        }
+    }
 }

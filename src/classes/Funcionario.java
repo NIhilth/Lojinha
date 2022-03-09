@@ -10,17 +10,6 @@ public class Funcionario extends Pessoa{
     private static void vender(){
 
     }
-    private static void cadastrarCliente(){
-
-    }
-
-    private static void verificaEstoque(){
-
-    }
-
-    private static void cadastrarProduto(){
-
-    }
 
     public static ArrayList<Funcionario> getListaFuncionarios() {
         return listaFuncionarios;
@@ -46,11 +35,11 @@ public class Funcionario extends Pessoa{
         this.senha = senha;
     }
 
-    public boolean checarFuncionario(int numero) {
+    public boolean checarFuncionario(int numero, String senha) {
         boolean verifica = false;
 
         for(int i = 0; i < Funcionario.listaFuncionarios.size(); i++){
-            if(Funcionario.listaFuncionarios.get(i).getMatricula() == numero){
+            if(Funcionario.listaFuncionarios.get(i).getMatricula() == numero && Funcionario.listaFuncionarios.get(i).getSenha().equals(senha) ){
                 verifica = true;
             }
         }

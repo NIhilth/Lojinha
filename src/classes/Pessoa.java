@@ -53,10 +53,6 @@ public class Pessoa extends Endereco{
         this.idade = idade;
     }
 
-    public static void comprar(){
-
-    }
-
     public Pessoa(String pais, String estado, String cidade, String bairro, String rua, String complemento, int numero, int cep, String nome, String cpf, String email, String telefone, String genero, int idade) {
         super(pais, estado, cidade, bairro, rua, complemento, numero, cep);
         this.nome = nome;
