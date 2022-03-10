@@ -102,11 +102,8 @@ public class Main {
     }
 
     private static void interfaceVender(boolean cargo, int opcao) {
-        if(opcao == 1) {
-            System.out.println("Qual o produto a ser vendido (Digite seu código)? \nDigite 0 para voltar");
-        } else {
-            System.out.println("Qual o produto a ser comprado (Digite seu código)? \nDigite 0 para voltar");
-        }
+        System.out.println("Qual o produto a ser " + ((opcao == 1)? "vendido": "comprado") +  " (Digite seu código)? \nDigite 0 para voltar");
+
         int numero = sc.nextInt();
 
         if(numero == 0){
@@ -114,11 +111,9 @@ public class Main {
         } else {
             boolean checar = Produto.listaProdutos.get(0).verProduto(numero);
             if(checar){
-                if(opcao == 1) {
-                    System.out.println("Quantos serão vendidos?");
-                } else {
-                    System.out.println("Quantos serão comprados?");
-                }
+
+                System.out.println("Quantos serão " + ((opcao == 1)? " vendidos": "comprados") + "?");
+
                 int quantidade = sc.nextInt();
                 double preco = Produto.listaProdutos.get(numero - 1).getValor() * quantidade;
                 Produto.listaProdutos.get(0).vender(numero, quantidade);
