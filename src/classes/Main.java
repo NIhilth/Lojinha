@@ -37,11 +37,7 @@ public class Main {
 
             if (checar) {
                 Funcionario funcionario = Funcionario.listaFuncionarios.get(numero - 1);
-                if(funcionario instanceof Gerente) {
-                    checar = true;
-                } else {
-                    checar = false;
-                }
+                checar = funcionario instanceof Gerente;
                 menuOperacoes(checar);
             } else {
                 System.out.println("Número de matrícula ou Senha inválidos");
@@ -83,7 +79,7 @@ public class Main {
                     break;
                 case 6:
                     if(cargo){
-                        interfaceCadastro(cargo, 0);
+                        interfaceCadastro(true, 0);
                     } else {
                         login();
                     }
@@ -93,7 +89,7 @@ public class Main {
                         login();
                     } else {
                         System.out.println("Opção Inválida");
-                        menuOperacoes(cargo);
+                        menuOperacoes(true);
                     }
                     break;
             }
@@ -169,7 +165,7 @@ public class Main {
     }
 
     private static void interfaceCadastro(boolean cargo, int number) {
-        String nome, cpf, email, telefone, genero, pais, estado, cidade, bairro, rua, complemento = "";
+        String nome, cpf, email, telefone, genero, pais, estado, cidade, bairro, rua, complemento;
         int idade, numero, cep, escolha = 0;
 
         if(number == 0){
