@@ -9,18 +9,6 @@ public class Produto {
     private double valor;
     private int codigo, quantidade;
 
-    private static void reduzirEstoque(){
-
-    }
-
-    public static ArrayList<Produto> getListaProdutos() {
-        return listaProdutos;
-    }
-
-    public static void setListaProdutos(ArrayList<Produto> listaProdutos) {
-        Produto.listaProdutos = listaProdutos;
-    }
-
     public String getModelo() {
         return modelo;
     }
@@ -114,6 +102,7 @@ public class Produto {
         for(int i = 0; i < listaProdutos.size(); i++){
            if(listaProdutos.get(i).getCodigo() == numero){
                checar = true;
+               break;
            }
         }
 

@@ -7,17 +7,6 @@ public class Funcionario extends Pessoa{
     static public ArrayList<Funcionario> listaFuncionarios = new ArrayList<Funcionario>();
     private int matricula;
     private String senha ;
-    private static void vender(){
-
-    }
-
-    public static ArrayList<Funcionario> getListaFuncionarios() {
-        return listaFuncionarios;
-    }
-
-    public static void setListaFuncionarios(ArrayList<Funcionario> listaFuncionarios) {
-        Funcionario.listaFuncionarios = listaFuncionarios;
-    }
 
     public int getMatricula() {
         return matricula;
@@ -39,8 +28,9 @@ public class Funcionario extends Pessoa{
         boolean verifica = false;
 
         for(int i = 0; i < Funcionario.listaFuncionarios.size(); i++){
-            if(Funcionario.listaFuncionarios.get(i).getMatricula() == numero && Funcionario.listaFuncionarios.get(i).getSenha().equals(senha) ){
+            if (Funcionario.listaFuncionarios.get(i).getMatricula() == numero && Funcionario.listaFuncionarios.get(i).getSenha().equals(senha)) {
                 verifica = true;
+                break;
             }
         }
 
